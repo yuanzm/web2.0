@@ -1,0 +1,98 @@
+/*
+ * Author: yuanzm
+ * Date: 2014-09-25
+ */
+ 
+/*css reset*/
+* {
+	margin: 0;
+	padding: 0;
+}
+/*global style*/
+body {
+	padding-bottom: 30px;
+	background-color: #595547;
+	color: white;
+	font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.6em;
+}
+h1 {
+	margin-top: 30px;
+	text-align: center;
+}
+h2 {
+	letter-spacing: 2px;
+}
+li {
+	list-style-position: inside;
+}
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #541C74;
+}
+a:hover {
+	text-decoration: underline;
+}
+p,li {
+	text-indent: 30px;
+	letter-spacing:2px;
+}
+p:first-letter,li:first-letter {
+	font-size: 1.5em;
+}
+b {
+	color: #ecf266;
+}
+/*the global style of wrapper box*/
+#wrapper {
+	width: 1000px;
+	margin: 0 auto;
+}
+.about-me {
+	margin-top: 30px;
+}
+
+/*Introduction style*/
+.email {
+	color: #5bd3fc;
+}
+/*My favorite movies*/
+ol.reverse {
+    list-style: none;
+    counter-reset: reverse 4;
+}
+
+ol.reverse > li:before {
+    content: counter(reverse) '.';
+    display: block;
+    position: absolute;
+    left: -15px;
+    text-align: right;
+    width: 20px;
+}
+
+ol.reverse > li {
+	text-indent: 45px;
+    counter-increment: reverse -1;
+    position: relative;
+}
+.movie-detail {
+	margin-left: 15px;
+	list-style: none;
+}
+.movie-detail p {
+	padding-left: 40px;
+}
+.movie-detail p:first-child{
+	color: #ecf266;
+	padding-left: 0px;
+}
+
+/*My favorite picture style*/
+img {
+	width: 300px;
+	height: 200px;
+	margin-top: 20px;
+	margin-left: 30px;
+}
