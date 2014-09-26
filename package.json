@@ -1,0 +1,14 @@
+{
+  "name": "heyBlog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-coffee": "0.7.x",
+    "grunt-contrib-watch": "0.5.x"
+  }
+}
