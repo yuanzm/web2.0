@@ -11,7 +11,7 @@ a {
   color: #EEDB53; }
 
 #wrapper {
-  width: 960px;
+  width: 980px;
   margin: 100px auto 0px; }
 
 header {
@@ -32,13 +32,13 @@ section {
   margin: 0 auto; }
   section .part {
     width: 90px;
-    height: 130px;
+    height: 150px;
     margin-left: 20px;
     float: left; }
   section .content {
     width: 83px;
     height: 83px;
-    margin: 20px auto;
+    margin: 30px auto;
     text-align: center;
     line-height: 83px;
     font-size: 18px;
@@ -53,7 +53,8 @@ section {
     -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
     background-color: #eb8160;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative; }
     section .content a {
       display: inline-block;
       width: 100%;
@@ -71,6 +72,49 @@ section {
     -ms-transform: scale(1.45);
     -o-transform: scale(1.45);
     transform: scale(1.45); }
+    section .content:hover .details {
+      -webkit-opacity: 1;
+      -moz-opacity: 1;
+      -ms-opacity: 1;
+      -o-opacity: 1;
+      opacity: 1;
+      filter: alpha(opacity=100); }
+
+.details {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  background: #3c6064; }
+  .details .half {
+    width: 48%;
+    height: 100%;
+    float: left;
+    font-size: 14px;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    -ms-opacity: 0.5;
+    -o-opacity: 0.5;
+    opacity: 0.5; }
+  .details .half:hover {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1; }
 
 footer {
   text-align: center; }
