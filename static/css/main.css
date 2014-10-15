@@ -116,5 +116,20 @@ section {
     -o-opacity: 1;
     opacity: 1; }
 
+#link {
+  text-align: center; }
+
+#score {
+  display: inline-block;
+  width: 165px;
+  height: 40px;
+  text-decoration: none;
+  line-height: 40px;
+  color: #fff;
+  background-color: #eb8160; }
+
+#score:hover {
+  background-color: #B45D42; }
+
 footer {
   text-align: center; }
