@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Music Viewer</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<link href="{{ static_url("css") }}/music.css" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="header">
+			<h1>190M Music Playlist Viewer</h1>
+			<h2>Search Through Your Playlists and Music</h2>
+		</div>
+		
+		
+		<div id="listarea">
+			<ul id="musiclist">
+				{% for mp3 in allSongs%}
+					<li class = "mp3item">
+						<a href="{{ static_url("songs") }}/{{mp3.name}}">{{mp3.name}}</a>
+						({{mp3.size}})
+					</li>
+				{%end for%}
+				{% for txt in allTxt%}
+					<li class = "playlistitem">
+						<a href="?playList={{txt.mainName}}">{{txt.name}}</a>
+						({{txt.size}})
+					</li>
+				{%end for%}
+			</ul>
+		</div>
+		{%if isPlayList%}
+			<a href="?bySize=on&playList={{isPlayList}}"><button class="bySize">bySize</button></a>	
+			<a href="?shuffle=on&playList={{isPlayList}}"><button class="shuffle">shuffle</button></a>
+			{%else%}
+			<a href="?bySize=on"><button class="bySize">bySize</button></a>
+			<a href="?shuffle=on"><button class="shuffle">shuffle</button></a>
+		{%end if%}
+		{% if isBackShow%}
+			<a href="?back=on"><button class="returnLastPage">Back</button>
+		{%end if%}
+
+	</body>
+</html>
