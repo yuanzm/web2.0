@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<title>Music Viewer</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<link href="{{ static_url("css") }}/music.css" type="text/css" rel="stylesheet" />
+		<link href="{{ static_url("css/music.css") }}" type="text/css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -18,7 +18,7 @@
 			<ul id="musiclist">
 				{% for mp3 in allSongs%}
 					<li class = "mp3item">
-						<a href="{{ static_url("songs") }}/{{mp3.name}}">{{mp3.name}}</a>
+						<a href="{{ static_url("songs/" + mp3.name) }}">{{mp3.name}}</a>
 						({{mp3.size}})
 					</li>
 				{%end for%}
