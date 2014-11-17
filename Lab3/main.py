@@ -1,15 +1,20 @@
 #coding:utf-8
+
 import os.path
 import random
+
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import tornado.web
 
 from tornado.options import define, options
-define("ports", default=8000, help="Run on the given port ", type=int)
+define("ports", default=8888, help="Run on the given port ", type=int)
 
 class song:
+
+	"""get song message"""
+
 	def __init__(self, name, mainName, size):
 		self.name = name
 		self.mainName = mainName
@@ -39,7 +44,6 @@ class IndexHandler(tornado.web.RequestHandler):
 		if playList is not None:
 			fs = open(os.path.join(path, playList + '.m3u'))
 			songList = fs.read().splitlines()
-			fs.close()
 			playSong = []
 			for song in songList:
 				if song[0] != "#":
