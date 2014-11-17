@@ -1,7 +1,4 @@
-#coding:utf-8
-
 import os.path
-
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
@@ -39,7 +36,6 @@ def getDirFileMessage(path, fileName, fileType, isBroad):
 					fopen = open(os.path.join(path, oneFile),"r")
 					message = fopen.readlines()
 					fopen.close()
-
 	return message
 
 def getInfo(path):
