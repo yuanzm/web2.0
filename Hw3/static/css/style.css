@@ -1,0 +1,125 @@
+
+body{
+	margin: 0 auto;
+	background-image: url("http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/background.png?version=1&modificationDate=1268896312000");
+	font: Tahoma,Verdana,sans-serif 8px;
+
+}
+#header{
+	background-image: url("http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/bannerbackground.png?version=1&modificationDate=1268896312000");
+	background-repeat: repeat-x;
+}
+h1{
+	font: 24pt;
+	font-family: Tahoma, Verdana,sans-serif;
+	text-align: center;
+}
+#outline{
+	width: 800px;
+	margin: auto;
+	border: solid gray 4px;
+	overflow: hidden;
+}
+#jianjie{
+	width: 250px;
+	background-color: #A2B964;
+	font: 8pt Verdana,Arial,Sans-serif;
+	float: right;	
+}
+dl{
+	padding: 10px;
+}
+dt{
+	font-weight: bold;
+	line-height: 3em;
+}
+#comment{
+	width: 550px;
+}
+#rotten{
+	background-image: url("http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/rottenbackground.png?version=1&modificationDate=1268896385000");
+	background-repeat: repeat-x;
+	height: 83px;
+}
+.chaping{
+	color: red;
+	font:bold 48pt arial, verdana, sans-serif;
+	line-height: 83px;
+	vertical-align: center;	
+}
+#rotten img{
+	float: left;
+	height: 83px;
+}
+.total{
+	font: 8pt;
+	color: white;
+}
+#left{
+	float: left;
+	width: 258.5px;
+
+}
+#right{
+	float: right;
+	width: 258.5px;
+
+}
+q{
+	font: bold;
+}
+.pinglunleft{
+	padding: 8px;
+	background-color:#E1D697;
+	margin-left: 11px;
+	width: 245px;
+	border: solid gray 2px;
+	background-color: #E1D697;
+	overflow: hidden;
+}
+.pinglunleft img{
+	float: left;
+	margin-right: 5px;
+}
+.pinglunright{
+	padding: 8px;
+	background-color:#E1D697;
+	width: 226px;
+	border: solid gray 2px;
+	background-color: #E1D697;
+	overflow: hidden;
+}
+.pinglunright img{
+	float: left;
+	margin-right: 5px;
+}
+.adress{
+	font-style:italic;
+}
+q{
+	font-weight: bold;
+
+}
+.clear{
+	clear: both;
+}
+#bottom{
+	background-color: #A2B964;
+	padding: 5px;
+	margin: 0;
+	text-align: center;
+}
+
+.comleft img{
+	margin-right: 5px;
+	float: left;
+}
+.comright img{
+	float: left;
+	margin-right: 5px;
+}
+#w3cicon{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
