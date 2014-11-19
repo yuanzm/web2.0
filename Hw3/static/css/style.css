@@ -1,12 +1,12 @@
 
 body{
 	margin: 0 auto;
-	background-image: url("http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/background.png?version=1&modificationDate=1268896312000");
+	background-image: url("http://courses.cs.washington.edu/courses/cse190m/09sp/homework/2/background.png");
 	font: Tahoma,Verdana,sans-serif 8px;
 
 }
 #header{
-	background-image: url("http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/bannerbackground.png?version=1&modificationDate=1268896312000");
+	background-image: url("http://courses.cs.washington.edu/courses/cse190m/09sp/homework/2/bannerbackground.png");
 	background-repeat: repeat-x;
 }
 h1{
@@ -37,7 +37,7 @@ dt{
 	width: 550px;
 }
 #rotten{
-	background-image: url("http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/rottenbackground.png?version=1&modificationDate=1268896385000");
+	background-image: url("http://courses.cs.washington.edu/courses/cse190m/09sp/homework/2/rottenbackground.png");
 	background-repeat: repeat-x;
 	height: 83px;
 }
