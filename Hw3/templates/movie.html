@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>TMNT - Rancid Tomatoes</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    	<link rel="stylesheet" href="{{ static_url("css/style.css") }}" />
+    	<link rel="shortcut icon" href="http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/rotten.gif?version=1&modificationDate=1268896385000" />
+	</head>
+
+	<body>
+		<div id ="header">
+			<img class="bgimg" src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/banner.png" alt="Rancid Tomatoes" />
+		</div>
+
+		<h1>{{info[0]}}({{info[1]}})</h1>
+		<div id = "outline">
+			<div id= "jianjie">
+				<div>
+					<img src="{{ static_url(imgPath) }}" alt="general overview" />
+				</div>
+
+				<dl id = "zhiyuan">
+					{% for item in overView %}
+					<dt>{{ item.split(':')[0] }}</dt>
+					<dd>{{ item.split(':')[1] }}</dd>
+					{% end %}
+				</dl>
+			</div>
+			<div id="comment">
+				<div id="rotten">
+		            {% if info[2] >= "60" %}
+            			<img src="http://my.ss.sysu.edu.cn/wiki/download/attachments/7045943/freshbig.png?version=1&modificationDate=1270162015000">
+            		{% else %}
+            			<img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/rottenbig.png" alt="Rotten" />
+            		{%end%}
+
+            		<span class = "chaping">{{info[2]}}% </span><span class = "total">({{info[3]}} reviews total)</span>
+				</div>
+				<div id="left">	
+		            {% for file in review[0:len(review) /2 ] %}
+		            <p class = "pinglunleft">
+		                {% if file[1] == 'ROTTEN\n' %}
+		                <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/rotten.gif" alt="Rotten" />
+		                {% else %}
+		                <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/fresh.gif" alt="Fresh" />
+		                {% end %}
+		                <q>{{file[0]}}</q>
+		            </p>
+		            <p class="comleft">
+		                <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/critic.gif" alt="Critic" />
+		                {{file[2]}} <br />
+		                <span class = "adress">{{file[3]}}</span>
+		            </p>
+		            {%end%}
+				</div>
+				<div id="right">
+					{% for file in review[len(review) / 2: len(review) ] %}
+		            <p class = "pinglunright">
+		                {% if file[1] == 'ROTTEN\n' %}
+		                    <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/rotten.gif" alt="Rotten" />
+		                {% else %}
+		                    <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/fresh.gif" alt="Fresh" />
+		                {% end %}
+		                <q>{{file[0]}}</q>
+		            </p>
+		            <p class="comright">
+		                <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/critic.gif" alt="Critic" />
+		                {{file[2]}} <br />
+		                <span class = "adress">{{file[3]}}</span>
+		            </p>
+		            {%end%}				
+				</div>
+					</div>
+					<div class="clear"></div>
+					<p id="bottom">(1-8) of 88</p>
+				</div>
+				<div id="w3cicon">
+				<a  class="tubiao" href="http://validator.w3.org/check/referer"><img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/w3c-xhtml.png" alt="Valid XHTML 1.1" /></a> <br />
+				<a class="tubiao" href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/w3c-css.png" alt="Valid CSS!" /></a>
+				</div>
+	</body>
+</html>
