@@ -29,6 +29,7 @@ def readFromFile(path):
 
 def Luhn(cardNumberString):
 	sum = 0
+
 	card = list(cardNumberString[::-1])
 	cardLength = len(card)
 
@@ -46,7 +47,6 @@ def Luhn(cardNumberString):
 
 class IndexHandler(tornado.web.RequestHandler):
 	def get(self):
-		print Luhn('4408041254369873')
 		self.render('buyagrade.html')
 
 class infoHandler(tornado.web.RequestHandler):
@@ -60,9 +60,12 @@ class infoHandler(tornado.web.RequestHandler):
 		if name == None or section == None or card == None or cardType == None:
 			err = True
 		else:
-			err = False
-			infoMessage = info(name, section, card, cardType)
-			writeToFile(filepath, infoMessage.infoString())
+			if Luhn(card):		
+				err = False
+				infoMessage = info(name, section, card, cardType)
+				writeToFile(filepath, infoMessage.infoString())
+			else:
+				err = True
 		allLines = readFromFile(filepath)
 		self.render('sucker.html', infoMessage=infoMessage,allLines=allLines, err=err)
 
