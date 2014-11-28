@@ -1,0 +1,44 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--Copyright reversed by SS.SYSU-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Buy Your Way to a Better Education!</title>
+		<link rel="stylesheet" href="{{ static_url("css/buyagrade.css") }}" />
+	</head>
+
+	<body>
+		<h1>Buy Your Way to a Better Education!</h1>
+
+		<p>
+			The rough economy, along with recent changes in University of Washington policy, now allow us to offer grades for money.  That's right!  All you need to get a 4.0 in this course is cold, hard, cash.
+		</p>
+
+		<hr />
+
+		<h2>Give us your money</h2>
+
+		<form action="/sucker" method="post">
+			<label for="name">Name</label>
+			<br />
+			<input type="text" name="name" id="name"/>
+			<br />
+			<label for="section">Section</label>
+			<br />
+			<select>
+				<option value="(Select a section)">(Select a section)</option>
+				<option value ="MA">MA</option>
+				<option value ="MH">MH</option>
+			</select>
+			<br />
+			<label for="card">Credit Card</label>
+			<br />
+			<input type="text" name="card" id="card" />
+			<br />
+			<input type="radio" name="sex" value="Visa" />Visa
+			<input type="radio" name="sex" value="MasterCard" /> MasterCard
+			<br />
+			<button type="submit">I am a giant sucker</button>
+		</form>
+	</body>
+</html>
