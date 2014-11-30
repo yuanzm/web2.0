@@ -8,25 +8,27 @@
 
 	<body>
 		{% if not err%}
-		<h1>Thanks, sucker!</h1>
+			<h1>Thanks, sucker!</h1>
+			<p>Your information has been recorded.</p>
+			<dl>
+				<dt>Name</dt>
+				<dd>{{ infoMessage.name }}</dd>
 
-		<p>Your information has been recorded.</p>
+				<dt>Section</dt>
+				<dd>{{ infoMessage.section }}</dd>
 
-		<dl>
-			<dt>Name</dt>
-			<dd>{{ infoMessage.name }}</dd>
-
-			<dt>Section</dt>
-			<dd>{{ infoMessage.section }}</dd>
-
-			<dt>Credit Card</dt>
-			<dd>{{ infoMessage.card }}({{ infoMessage.cardType }})</dd>
-		</dl>
-		<p>Here are all the suckers who have submited here</p>
-		<pre>{{allLines}}</pre>
+				<dt>Credit Card</dt>
+				<dd>{{ infoMessage.card }}({{ infoMessage.cardType }})</dd>
+			</dl>
+			<p>Here are all the suckers who have submited here</p>
+			<pre>{{allLines}}</pre>
 		{%else%}
-		<h1>Sorry</h1>
-		<p>You didn't fill out the form completely. <a href="/">Try again?</a></p>
+			<h1>Sorry</h1>
+			{% if cardErr %}
+				<p>Your card number is not correct. <a href="/">Try again?</a></p>
+			{% else %}
+				<p>You didn't fill out the form completely. <a href="/">Try again?</a></p>
+			{% end if %}
 		{% end if %}
 	</body>
 </html>  

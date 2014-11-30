@@ -3,6 +3,7 @@ import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import tornado.web
+import re
 
 from tornado.options import define, options
 define("port", default=8000, help="run on the given port", type=int)
@@ -29,10 +30,8 @@ def readFromFile(path):
 
 def Luhn(cardNumberString):
 	sum = 0
-
 	card = list(cardNumberString[::-1])
 	cardLength = len(card)
-
 	for index, number in enumerate(card):
 		if (cardLength - index - 1) % 2 == 1:
 			sum += int(number)
@@ -44,6 +43,21 @@ def Luhn(cardNumberString):
 				sum += doubleNum / 10 + doubleNum % 10
 	flag = True if sum % 10 == 0 else False
 	return flag
+
+def checkCardNumber(cardType, cardNumberString):
+	pattern1 = re.compile('\d+');
+	pattern2 = re.compile('(\d{4}-){3}\d{4}')
+	check = True
+	if pattern1.match(cardNumberString) or pattern2.match(cardNumberString):
+		card = cardNumberString.replace('-', '')
+		if len(card) < 16:
+			check = False
+		else:
+			if (cardType == "Visa" and card[0] != '4') or (cardType == "MasterCard" and card[0] != '5'):
+				check = False
+			else:
+				check = Luhn(card)
+	return check
 
 class IndexHandler(tornado.web.RequestHandler):
 	def get(self):
@@ -57,17 +71,19 @@ class infoHandler(tornado.web.RequestHandler):
 		cardType = self.get_argument('card-type', None)
 		filepath = os.path.join(os.path.dirname(__file__), "static/info/sucker.txt")
 		infoMessage = ''
+		cardErr = False
 		if name == None or section == None or card == None or cardType == None:
 			err = True
 		else:
-			if Luhn(card):		
+			if checkCardNumber(cardType, card) == True:		
 				err = False
 				infoMessage = info(name, section, card, cardType)
 				writeToFile(filepath, infoMessage.infoString())
 			else:
 				err = True
+				cardErr = True
 		allLines = readFromFile(filepath)
-		self.render('sucker.html', infoMessage=infoMessage,allLines=allLines, err=err)
+		self.render('sucker.html', infoMessage=infoMessage,allLines=allLines, err=err, cardErr=cardErr)
 
 if __name__ == '__main__':
 	tornado.options.parse_command_line()
