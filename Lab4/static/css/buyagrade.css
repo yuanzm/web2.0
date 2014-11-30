@@ -20,7 +20,16 @@ h1, h2 {
     text-align: center;
 }
 
-input[type="submit"] {
+
+button[type="submit"] {
+    margin-top: 20px;
     font-size: 2em;
     width: 100%;
+}
+.inputBox {
+    width: 150px;
+    margin-left: 30px;
+}
+.card {
+    margin-left: 30px;
 }
