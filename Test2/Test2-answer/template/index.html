@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{{title}}</title>
+    <link rel="stylesheet" href="{{static_url("css/index.css")}}">
+    <link rel="shortcut icon" href="//static.segmentfault.com/global/img/favicon.30f7204d.ico">
+</head>
+<body>
+	<div id="header">
+		<nav class="container">
+			<h1 class="logo">
+				<a href="/">
+					<img src="{{static_url("images/home-logo.svg")}}" alt="SegmentFault">				
+				</a>
+			</h1>
+			<ul>
+				{% if not name %}
+					<li>
+						<a href="/signup">注册</a>
+					</li>
+					<li>
+						<a href="/login">直接登录</a>
+					</li>
+				{% else %}
+					<li>
+						<a href="#">{{name}}</a>
+					</li>
+					<li>
+						<a href="/logout">退出</a>
+					</li>
+				{% end if %}
+			</ul>
+		</nav>
+	</div>
+	<div class="container" id="wrapper">
+		<p class="main-title">
+            今天，你在开发时遇到了什么问题呢？
+            <a id="goAsk" href="/ask">我要提问</a>
+        </p>
+        <div id="question-list">
+        	{% for question in questions %}
+        	<section class="stream-list__item">
+                <div class="qa-rank">
+                	{% if int(question.votes) == 0 %}
+		            	<div class="votes hidden-xs">
+		            {% else %}
+		            	{% if int(question.votes) > 0  %}
+							<div class="votes hidden-xs plus">
+						{% else %}
+							<div class="votes hidden-xs minus">
+						{% end if %}
+					{% end if %}
+					
+		                {{question.votes}}
+		                <br />
+		                <small>投票</small>
+		            </div>
+		            {% if question.answers == '0' %}
+		            	<div class="answers">
+		            {% else %}
+						{% if question.answers > 0 %}
+							{% if question.state == '回答' %}
+								<div class="answers answered">
+							{% else %}
+								<div class="answers answered solved">
+							{% end if %}
+						{% end if %}
+					{% end if %}
+		                {{question.answers}}
+		                <br />
+		                <small>{{question.state}}</small>
+		            </div>
+		            <div class="views hidden-xs">
+		                {{question.views}}
+		                <br />
+		                <small>浏览</small>
+		            </div>
+		        </div>
+		        <div class="summary">
+		            <ul class="author list-inline">
+		                <li>
+		                    <a href="#">{{question.name}}</a>
+		                    <span class="split"></span>
+		                    <a href="#">{{question.time}}</a>
+		                </li>
+		            </ul>
+		            <h2 class="title"><a href="#">{{question.title}}</a></h2>
+		            <ul class="taglist--inline ib">
+		            	{% for tag in question.tags.split(',') %}
+		                <li class="tagPopup">
+		                	<a class="tag tag-sm" href="#" data-toggle="popover" data-original-title="android">{{tag}}
+		                	</a>
+		                </li>
+		                {% end for %}
+		            </ul>
+		        </div>
+		    </section>
+		    {% end for%}
+        </div>
+	</div>
+</body>
+</html>
