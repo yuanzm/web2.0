@@ -1,4 +1,4 @@
-Test2 Python $ Tornado
+Test2 Python & Tornado
 ======================
 
 * Runtime environment: Linux
