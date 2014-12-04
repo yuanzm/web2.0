@@ -1,2 +1,3 @@
 yuanzm,boss
 yuanzmdd,bosssd
+yuanzimin,boss
