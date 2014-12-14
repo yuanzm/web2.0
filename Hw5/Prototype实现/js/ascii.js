@@ -20,7 +20,7 @@
 		this.speed = 200;
 		this.currentIndex = -1;
 		this.nextFrame = null;
-		this.currentFrame = null;
+		this.allFrames = null;
 	}
 	AsciiAnimation.prototype = {
 		constructor: AsciiAnimation,
@@ -43,11 +43,11 @@
 		},
 		chooseAnimation: function() {
 			this.asciiIndex = this.asciiArray[$F('selectButton')];
-			this.currentFrame = this.asciiIndex.split("=====\n");
+			this.allFrames = this.asciiIndex.split("=====\n");
 		},
 		startAnimation: function() {
 			this.chooseAnimation();
-			if (this.currentFrame != '') {
+			if (this.allFrames != '') {
 				this.actionAnimation(this, 0);
 				stopButton.disabled = false;
 				startButton.disabled = true;
@@ -62,8 +62,8 @@
 			selectButton.disabled = false;
 		},
 		actionAnimation: function(self, index) {
-			self.currentIndex = index < self.currentFrame.length - 1?(index + 1):0;
-			displayarea.value = self.currentFrame[index];
+			self.currentIndex = index < self.allFrames.length - 1?(index + 1):0;
+			displayarea.value = self.allFrames[index];
 			self.nextFrame = setTimeout(self.actionAnimation, self.speed, self, self.currentIndex);
 		}
 	}
