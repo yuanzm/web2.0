@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- CSE 190 M, Spring 2009, Homework 5: ASCIImation -->
+
+<head>
+    <title>ASCIImation</title>
+    <link rel="icon" type="image/png" href="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/5/stickman.gif">
+    <link rel="stylesheet" type="text/css" href="bin/css/main.css">
+    <script src="lib/jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+    <h1>CSE 190 M ASCII Animation Viewer</h1>
+
+    <!-- your controls should go here -->
+    <div id="display">
+        <textarea id="displayarea" rows="20" cols="80"></textarea>
+    </div>
+
+    <div>
+
+        <fieldset>
+            <legend>PlayControls:</legend>
+            <button id="startButton">Start</button>
+            <button id="stopButton">Stop</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Animation:</legend>
+            <select id="selectButton">
+                <option>Blank</option>
+                <option>Exercise</option>
+                <option>Juggler</option>
+                <option>Bike</option>
+                <option>Dive</option>
+                <option>Bus</option>
+            </select>
+        </fieldset>
+
+        <fieldset id="fontSize">
+            <legend>Size:</legend>
+            <input type="radio" name="size" value="Small"/> Small
+            <input type="radio" name="size" value="Medium" checked="checked"/>Medium
+            <input type="radio" name="size" value="Large"/>Large
+        </fieldset>
+
+        <fieldset>
+            <legend>Speed:</legend>
+            <input type="checkbox" id="turboSpeed"/>Turbo
+        </fieldset>
+    </div>
+
+    <div>
+        <a href="http://validator.w3.org/check/referer"><img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/5/w3c-xhtml.png" alt="Valid XHTML 1.1" /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/5/w3c-css.png" alt="Valid CSS" /></a>
+        <a href="https://webster.cs.washington.edu/jslint/?referer"><img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/5/jslint.png" alt="JavaScript Lint" /></a>
+    </div>
+    <script src="bin/js/main.js"></script>
+</body>
+</html>

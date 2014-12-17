@@ -11,10 +11,10 @@
 		$displayarea = $("#displayarea"),
 		$selectButton = $("#selectButton");
 
-	window.onload = function() {
+	$(function() {
 		var ascii = new AsciiAnimation(ANIMATIONS);
 		ascii.init();
-	}
+	});
 	function AsciiAnimation(asciiArray) {
 		this.asciiArray = asciiArray;
 		this.asciiIndex = '';

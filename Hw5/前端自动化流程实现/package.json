@@ -1,0 +1,32 @@
+{
+  "name": "Front-End-Boilerplate",
+  "version": "0.0.1",
+  "description": "front-end-boilerplate",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuanzm/Front-End-Boilerplate.git"
+  },
+  "keywords": [
+    "feb"
+  ],
+  "author": "yuanzm",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "*",
+    "coffeeify": "*",
+    "grunt": "*",
+    "grunt-browserify": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-sass": "*"
+  },
+  "dependencies": {
+    "grunt-contrib-copy": "^0.7.0",
+    "stringify": "^3.0.0"
+  }
+}

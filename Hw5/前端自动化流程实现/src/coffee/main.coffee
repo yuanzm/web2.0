@@ -1,0 +1,2 @@
+asciiApp = require './asciiApp.coffee'
+
